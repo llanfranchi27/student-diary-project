@@ -17,7 +17,9 @@ function newStudent(req, res) {
 }
 
 function create(res, res){
-
+    req.body.done = false;
+	Skill.create(req.body);
+	res.redirect('/skills');
 }
 
 function deleteOne(req, res){

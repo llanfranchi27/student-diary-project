@@ -1,23 +1,32 @@
 <!DOCTYPE html>
 <html>
-<body>
+  <body>
+    <h2>New Student</h2>
 
-<h2>New Student</h2>
-
-<form>
-  <label>Full name:</label><br>
-  <input type="text" name="name" value="First & Last Name"><br>
-  <label>Location:</label><br>
-  <input type="text" name="location" value="City, State">
-  <label>Mood</label>
-  <select name="mood">
-    <option value="G">G</option>
-    <option value="PG">PG</option>
-    <option value="PG-13">PG-13</option>
-    <option value="R">R</option>
-</form>
-
-
-
-</body>
+    <form id="new-form" action="/students" method="POST">
+      <label>Full name:</label><br />
+      <input type="text" name="name" value="First & Last Name" /><br />
+      <label>Location:</label><br />
+      <input type="text" name="location" value="City, State" /><br />
+      <label>Mood</label><br />
+      <select name="mood">
+        <option value="Happy">Happy</option>
+        <option value="Excited">Excited</option>
+        <option value="Enthusiatic">Enthusiatic</option>
+        <option value="Confident">Confident</option>
+        <option value="Hopeful">Hopeful</option>
+        <option value="Neutral">Neutral</option>
+        <option value="Anxious">Anxious</option>
+        <option value="Frustrated">Frustrated</option>
+        <option value="Sad">Sad</option>
+        <option value="Angry">Angry</option></select
+      ><br />
+      <label>Do you have previous coding experience?:</label>
+      <select name="preCodingExp">
+        <option value="yes">Yes</option>
+        <option value="no">No</option></select
+      ><br />
+      <input type="submit" value="Add Student" />
+    </form>
+  </body>
 </html>
