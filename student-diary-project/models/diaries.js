@@ -8,4 +8,4 @@ const diarySchema = new Schema ({
         // timestamps: true
 });
 
-module.exports = mogoose.model('Diary', diarySchema);
+module.exports = mongoose.model('Diary', diarySchema);

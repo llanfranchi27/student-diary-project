@@ -22,12 +22,25 @@ function create(req, res){
         res.redirect('/students');
     }
 
+function edit(req, res) {
+    Student.findById (req.params.id, function(err, student) {
+        res.render('students/edit', { title: "Students", subtitle: 'Edit Student Details', student })
+    });
+}
 
+function update(req, res) {
+    Student.findByIdAndUpdate(req.params.id, req.body, function(err, student) {
+        if (err) {
+            req.render('students/edit', { title: "Students", subtitle: "Edit Student Details", student});
+        }
+        res.redirect('students/${student.id}')
+    });
+}
 
 function deleteOne(req, res){
-    Student.deleteOne(req.params.id);
-    res.redirect('/students');
-
+    Student.findByIdAndRemove(req.params.id, function(err, student) {
+        res.redirect('/students');
+    })
 }
 
 
@@ -36,5 +49,7 @@ module.exports = {
     show, 
     new: newStudent,
     create,
+    edit,
+    update,
     delete: deleteOne
 }
