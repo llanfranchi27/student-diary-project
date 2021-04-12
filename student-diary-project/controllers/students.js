@@ -1,4 +1,5 @@
 const Student = require('../models/students');
+const Diary = require('../models/diaries');
 
 
 function index(req, res) {
@@ -9,7 +10,9 @@ function index(req, res) {
 
 function show(req, res) {
     Student.findById(req.params.id, function(err, student){
-    res.render('students/show', {student})
+        Diary.find({ student: student._id }, function(err, diary) {
+            res.render('students/show', {student, diary})
+        })
 })
 }
 
@@ -33,12 +36,13 @@ function update(req, res) {
         if (err) {
             req.render('students/edit', { title: "Students", subtitle: "Edit Student Details", student});
         }
-        res.redirect('students/${student.id}')
+        res.redirect(`students/${student._id}`)
     });
 }
 
 function deleteOne(req, res){
     Student.findByIdAndRemove(req.params.id, function(err, student) {
+        // console.log('Student deleted', student)
         res.redirect('/students');
     })
 }

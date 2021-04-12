@@ -1,8 +1,11 @@
+<%- include('../partials/header') -%>
+
 <!DOCTYPE html>
 <html>
   <title>Pseudo Diaries</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/stylesheets/style.css" />
   <body>
     <table id="list">
       <thead>
@@ -13,23 +16,22 @@
         </tr>
       </thead>
       <tbody>
-        <% students.forEach(function(s, idx) { %>
-          <form action="/students/<%= idx %>?_method=DELETE"
-            class="delete-form" method="POST">
-            <button type="submit">Delete Student</button>
-          </form>
-         
-          
-          <tr>
+        <% students.forEach(function(s) { %>
+        <div id="studentBox">
+          <tr class="studentDetails">
             <td><%= s.name %></td>
             <td><%= s.location %></td>
             <td><a href="/students/<%= s._id %>">Student Details</a></td>
           </tr>
+        </div>
+          <form action="/students/<%= s._id %>?_method=DELETE"
+            class="delete-form" method="POST">
+            <button type="submit" style="position: absolute; right: 800px;">Delete Student</button>
+          </form>
           <% }); %>
-          <a href="/students/new">Add New Student</a>
-
         </tbody>
       </table>
 
   </body>
 </html>
+<%- include('../partials/footer') -%>
