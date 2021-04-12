@@ -1,8 +1,20 @@
-<!-- <h1><%= student.name %></h1>
-<section id="show-page">
-    <div><img > </div>
-    
-    <div><%= student.location %></div>
-    <div>Previous Coding? :</div>
-    <div><%= student.preCodingExp %></div>
-    <div><%= student ? 'Yes' : 'No' %></div> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section id="show-page">
+        <div>Name:</div>
+        <div><%= student.name %></div>
+        <div>Location:</div>
+        <div><%= student.location %></div>
+        <div>Previous Coding Experience:</div>
+        <div><%= student.preCodingExp ? 'Yes' : 'Nope' %></div>
+       </section>
+       <a href="/students/">DETAILS</a>
+</body>
+</html>

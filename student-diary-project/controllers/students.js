@@ -8,23 +8,28 @@ function index(req, res) {
 }
 
 function show(req, res) {
-    Student.findById(req.params.id)
+    Student.findById(req.params.id, function(err, student){
     res.render('students/show', {student})
+})
 }
 
 function newStudent(req, res) {
     res.render('students/new', { name: "Student Name"});
 }
 
-function create(res, res){
-    req.body.done = false;
-	Skill.create(req.body);
-	res.redirect('/skills');
-}
+function create(req, res){
+	Student.create(req.body);
+        res.redirect('/students');
+    }
+
+
 
 function deleteOne(req, res){
+    Student.deleteOne(req.params.id);
+    res.redirect('/students');
 
 }
+
 
 module.exports = {
     index, 

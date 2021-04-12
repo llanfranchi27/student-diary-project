@@ -7,4 +7,5 @@ const studentSchema = new Schema({
     preCodingExp: Boolean
 })
 
+
 module.exports = mongoose.model('Student', studentSchema)

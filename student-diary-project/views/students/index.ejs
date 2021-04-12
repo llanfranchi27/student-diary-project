@@ -4,17 +4,29 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <body>
-    <table>
-        <thead>
+    <table id="list">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Location</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% students.forEach(function(s, idx) { %>
+          <form action="/students/<%= idx %>?_method=DELETE"
+            class="delete-form" method="POST">
+            <button type="submit">X</button>
+          </form>
+          <a href="/students/<%= idx %>"><%= s.student %></a>
+          
           <tr>
-            <th>Student Name</th>
-            <th>Location</th>
-            <th></th>
+            <td><%= s.name %></td>
+            <td><%= s.location %></td>
+            <td><a href="/students/<%= s._id %>">DETAILS</a></td>
           </tr>
-        </thead>
-        <tbody>
-        
-          </tbody>
-        </table>
+          <% }); %>
+        </tbody>
+      </table>
   </body>
 </html>
