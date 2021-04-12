@@ -15,6 +15,33 @@
         <div>Previous Coding Experience:</div>
         <div><%= student.preCodingExp ? 'Yes' : 'Nope' %></div>
        </section>
-       <a href="/students/">DETAILS</a>
+       <a href="/diaries/new">Link to Diaries</a>
+
+       <h2>Diaries</h2>
+<form 
+id="add-Diary-form"
+  method="POST"
+  action="/students/<%= student._id %>/diaries">
+  <label>Diary:</label>
+  <textarea name="content"></textarea>
+<label>Date:</label>
+<input type="date" name="date">
+  <label>Mood:</label>
+  <select name="mood">
+        <option value="Happy">Happy</option>
+        <option value="Excited">Excited</option>
+        <option value="Enthusiatic">Enthusiatic</option>
+        <option value="Confident">Confident</option>
+        <option value="Hopeful">Hopeful</option>
+        <option value="Neutral">Neutral</option>
+        <option value="Anxious">Anxious</option>
+        <option value="Frustrated">Frustrated</option>
+        <option value="Sad">Sad</option>
+        <option value="Angry">Angry</option>
+  </select>
+  <input type="submit" value="Add Diary">
+  
+</form>
+
 </body>
 </html>
