@@ -1,65 +1,57 @@
 const Diary = require('../models/diaries');
+// const students = require('../models/students');
 const Student = require('../models/students');
 
 module.exports = {
-    new: newDiary, 
-    // show,
-    // addDiary,
+    // new: newDiary, 
+    // // show,
+    // // addDiary,
     create,
+    // addToStudent
 }
 
+// function newDiary(req, res){
+//   Diary.find({}, function(err, diaries){
+//     console.log('diary posted')
+//     res.render('diaries/new', {
+//       title: 'Add Diary',
+//       diaries, 
+//     });
+//   })
+// }
 
 
-
-function newDiary(req, res) {
-  res.render('diaries/new', { name: "Diary Entry"});
-}
-
-function create(req, res) {
-  Student.findById(req.params.id, function(err, student){
-    student.diaries.push(req.body);
-    student.save(function(err){
-      res.redirect(`/students/${student._id}`);
-    });
-  });
-}
 // function create(req, res){
-// Diary.create(req.body);
-//       res.redirect('/students/show');
+//   const diary = new Diary(req.body);
+//   diary.save(function(err){
+//     if(err) return res.redirect('/diaries/');
+//     res.redirect('/diaries');
+//   })
+    
 
+// }
+
+//  function addToStudent(req, res) {
+//     Student.findById(req.params.id, function(err, student){
+//       student.diary.push(req.body.studentId);
+//       student.save(function(err){
+//         res.redirect(`/students/${student._id}`)
+//       })
+//     })
 //   }
 
 
 // function newDiary(req, res) {
-//     Diary.find({},function(err, diaries){
-//         res.render("/diaries/new", {
-//             name: "Add Diary Entry",
-//             diaries,
-
-//         });
-//     });
-
+//   res.render('diaries/new', { name: "Diary Entry"});
 // }
 
-// function show(req, res) {
-//   Diary.findById(req.params.id, function(err, diaries){
-//   res.render('diaries/show', { diaries })
-// })
-// }
-
-// function newDiary(req, res) {
-//   res.render('diaries/show', { name: "Add Diary Entry"});
-// }
-
-
-
-// 	function addDiary(req, res) {
-//         Student.findById(req.params.id, function(err, student) {
-//           student.diaries.push(req.body);
-//           student.save(function(err) {
-//             res.redirect(`diaries/show`);
-//           });
-//         });
-//       }
+function create(req, res) {
+  Student.findById(req.params.id, function(err, student) {
+    student.diaries.push(req.body);
+    student.save(function(err) {
+      res.redirect(`/students/${student._id}`);
+    });
+  });
+}
 
       
