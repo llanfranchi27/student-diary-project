@@ -25,20 +25,6 @@ function create(req, res){
         res.redirect('/students');
     }
 
-function edit(req, res) {
-    Student.findById (req.params.id, function(err, student) {
-        res.render('students/edit', { title: "Students", subtitle: 'Edit Student Details', student })
-    });
-}
-
-function update(req, res) {
-    Student.findByIdAndUpdate(req.params.id, req.body, function(err, student) {
-        if (err) {
-            req.render('students/edit', { title: "Students", subtitle: "Edit Student Details", student});
-        }
-        res.redirect(`students/${student._id}`)
-    });
-}
 
 function deleteOne(req, res){
     Student.findByIdAndRemove(req.params.id, function(err, student) {
@@ -53,7 +39,5 @@ module.exports = {
     show, 
     new: newStudent,
     create,
-    edit,
-    update,
     delete: deleteOne
 }

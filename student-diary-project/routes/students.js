@@ -7,12 +7,10 @@ router.get('/new', studentsCtrl.new);
 router.post('/', studentsCtrl.create);
 router.get('/:id', studentsCtrl.show);
 router.delete('/:id', studentsCtrl.delete);
-router.get('/:id/edit', studentsCtrl.edit);
-router.put('/:id', studentsCtrl.update);
+
 
 
 module.exports = router;
-
 
 
 
