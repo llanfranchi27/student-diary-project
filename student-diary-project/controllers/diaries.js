@@ -61,3 +61,12 @@ function create(req, res) {
 //           });
 //         });
 //       }
+
+// 	function addDiary(req, res) {
+//         Student.findById(req.params.id, function(err, student) {
+//           student.diaries.push(req.body);
+//           student.save(function(err) {
+//             res.redirect(`diaries/show`);
+//           });
+//         });
+//       }
