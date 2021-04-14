@@ -4,16 +4,23 @@
     <h2>New Student</h2>
 
     <form id="new-form" action="/students" method="POST">
-      <label>Full name:</label><br />
-      <input type="text" name="name" value="First & Last Name" /><br />
-      <label>Location:</label><br />
-      <input type="text" name="location" value="City, State" /><br />
+    <div class="mb-3">
+      <label for="formGroupExampleInput" class="form-label">Full Name</label>
+      <input type="text" class="form-control" name="name"  id="formGroupExampleInput" placeholder="First Name and Last Name">
+    </div>
+    <div class="mb-3">
+      <label for="formGroupExampleInput2" class="form-label">Location</label>
+      <input type="text" class="form-control" name="location" id="formGroupExampleInput2" placeholder="City, State">
+    </div>
+    <div class="mb-3">
       <label>Do you have previous coding experience?:</label>
       <select name="preCodingExp">
         <option value="yes">Yes</option>
-        <option value="no">No</option></select
-      ><br />
-      <input type="submit" value="Add Student" />
+        <option value="no">No</option>
+      </select>
+    </div>
+    <input type="submit" value="Add Student" />
     </form>
+
   </body>
 </html>

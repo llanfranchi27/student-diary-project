@@ -1,3 +1,5 @@
+<%- include('../partials/header') -%>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -44,17 +46,32 @@
       <button type="submit" value="Add Diary">Add Diary</button>
     </form>
 
-  <!-- add foreach loop -->
-    <h2>Diaries</h2>
-    <section id="show-page">
-      <div>Date:</div>
-      <div><%= diary.date %></div>
-      <div>Mood:</div>
-      <div><%= diary.mood %></div>
-      <div>Diary Entry:</div>
-      <div><%= diary.diaryEntry %></div>
-    </section>
+    <% if(student.diaries.length) { %>
+      <table>
+        <thead>
+          <tr >
+            <th>Date</th>
+            <th>Mood</th>
+            <th>Dairy Entry</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% student.diaries.forEach(function(d){ %>
+          <tr>
+            <td><%= d.date %></td>
+            <td><%= d.mood %></td>
+            <td><%= d.diaryEntry %></td>
+          </tr>
+          <% });%>
+        </tbody>
+      </table>
+      <% } else { %> 
+        <h5>No Diary Entries</h5>
+      <% } %>
+    
     <br />
+
+
     <h1>Update Student</h1>
 
     <form id="new-form" action="/students/<%= student._id %>?_method=PUT" method="POST">
@@ -70,8 +87,12 @@
       <input type="submit" value="Update Student" />
     </form>
 
+   
+
     <br />
 
     <a href="/students">Back to All Students</a>
   </body>
 </html>
+
+<%- include('../partials/footer') -%>
