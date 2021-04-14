@@ -1,11 +1,10 @@
 const Diary = require('../models/diaries');
-// const students = require('../models/students');
+const students = require('../models/students');
 const Student = require('../models/students');
 
 module.exports = {
     // new: newDiary, 
     // // show,
-    // // addDiary,
     create,
     // addToStudent
 }
@@ -25,7 +24,7 @@ module.exports = {
 //   const diary = new Diary(req.body);
 //   diary.save(function(err){
 //     if(err) return res.redirect('/diaries/');
-//     res.redirect('/diaries');
+//     res.redirect(`/students/${student._id}`);
 //   })
     
 

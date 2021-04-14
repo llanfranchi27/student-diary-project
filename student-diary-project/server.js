@@ -25,7 +25,7 @@ app.use(methodOverride('_method'));
 
 app.use('/', indexRouter);
 app.use('/students', studentsRouter);
-app.use("/diaries", diariesRouter)
+app.use('/', diariesRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

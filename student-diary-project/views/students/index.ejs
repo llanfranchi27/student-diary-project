@@ -17,17 +17,15 @@
       </thead>
       <tbody>
         <% students.forEach(function(s) { %>
-        <div id="studentBox">
           <tr class="studentDetails">
             <td><%= s.name %></td>
             <td><%= s.location %></td>
             <td><a href="/students/<%= s._id %>">Student Details</a></td>
+            <td><form action="/students/<%= s._id %>?_method=DELETE"
+              class="delete-form" method="POST">
+              <button type="submit">Delete Student</button>
+            </form></td>
           </tr>
-        </div>
-          <form action="/students/<%= s._id %>?_method=DELETE"
-            class="delete-form" method="POST">
-            <button type="submit">Delete Student</button>
-          </form>
           <% }); %>
         </tbody>
       </table>

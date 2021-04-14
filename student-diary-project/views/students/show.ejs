@@ -1,57 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <section id="show-page">
-        <div>Name:</div>
-        <div><%= student.name %></div>
-        <div>Location:</div>
-        <div><%= student.location %></div>
-        <div>Previous Coding Experience:</div>
-        <div><%= student.preCodingExp ? 'Yes' : 'Nope' %></div>
-       </section>
-       <!-- <a href="/diaries/new">Add New Diary</a> -->
+      <div>Name:</div>
+      <div><%= student.name %></div>
+      <div>Location:</div>
+      <div><%= student.location %></div>
+      <div>Previous Coding Experience:</div>
+      <div><%= student.preCodingExp ? 'Yes' : 'Nope' %></div>
+    </section>
 
-       <!-- <a href="/diaries/new">Add New Diary</a> -->
-       <h2>Diaries</h2>
-       <form 
-       id="add-Diary-form"
-         method="POST"
-         action="/students/<%= student._id %>">
-         <label>Diary:</label>
-         <textarea name="content"></textarea>
-       <label>Date:</label>
-       <input type="date" name="date">
-         <label>Mood:</label>
-         <select name="mood">
-               <option value="Happy">Happy</option>
-               <option value="Excited">Excited</option>
-               <option value="Enthusiatic">Enthusiatic</option>
-               <option value="Confident">Confident</option>
-               <option value="Hopeful">Hopeful</option>
-               <option value="Neutral">Neutral</option>
-               <option value="Anxious">Anxious</option>
-               <option value="Frustrated">Frustrated</option>
-               <option value="Sad">Sad</option>
-               <option value="Angry">Angry</option>
-         </select>
-         <input type="submit" value="Add Diary">
-       </form>
+    <!-- <a href="/diaries/new">Add New Diary</a> -->
 
-       <h2>Diaries</h2>
-       <section id="show-page">
-         <div>Date:</div>
-         <div><%= diary.date %></div>
-         <div>Mood:</div>
-         <div><%= diary.mood %></div>
-         <div>Diary Entry:</div>
-         <div><%= diary.diaryEntry %></div>
-       </section>
+    <h2>Diaries</h2>
+    <form
+      id="add-Diary-form"
+      method="POST"
+      action="/students/<%= student._id %>/diaries"
+    >
+      <label>Diary:</label>
+      <textarea name="content"></textarea>
+      <label>Date:</label>
+      <input type="date" name="date" />
+      <label>Mood:</label>
+      <select name="mood">
+        <option value="Happy">Happy</option>
+        <option value="Excited">Excited</option>
+        <option value="Enthusiatic">Enthusiatic</option>
+        <option value="Confident">Confident</option>
+        <option value="Hopeful">Hopeful</option>
+        <option value="Neutral">Neutral</option>
+        <option value="Anxious">Anxious</option>
+        <option value="Frustrated">Frustrated</option>
+        <option value="Sad">Sad</option>
+        <option value="Angry">Angry</option>
+      </select>
+      <button type="submit" value="Add Diary">Add Diary</button>
+    </form>
 
-</body>
+  <!-- add foreach loop -->
+    <h2>Diaries</h2>
+    <section id="show-page">
+      <div>Date:</div>
+      <div><%= diary.date %></div>
+      <div>Mood:</div>
+      <div><%= diary.mood %></div>
+      <div>Diary Entry:</div>
+      <div><%= diary.diaryEntry %></div>
+    </section>
+    <br />
+    <h1>Update Student</h1>
+
+    <form id="new-form" action="/students/<%= student._id %>?_method=PUT" method="POST">
+      <label>Full name:</label><br />
+      <input type="text" name="name" value="First & Last Name" /><br />
+      <label>Location:</label><br />
+      <input type="text" name="location" value="City, State" /><br />
+      <label>Do you have previous coding experience?:</label>
+      <select name="preCodingExp">
+        <option value="yes">Yes</option>
+        <option value="no">No</option></select
+      ><br />
+      <input type="submit" value="Update Student" />
+    </form>
+
+    <br />
+
+    <a href="/students">Back to All Students</a>
+  </body>
 </html>

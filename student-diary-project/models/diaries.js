@@ -1,11 +1,11 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+// const mongoose = require('mongoose');
+// const Schema = mongoose.Schema;
 
-const diarySchema = new Schema ({
-    date: {type: Date, required: true},
-    mood: {type: String, required: true},
-    diaryEntry: {type: String, required: true}, 
-        // timestamps: true
-});
+// const diarySchema = new Schema ({
+//     date: {type: Date, required: true},
+//     mood: {type: String, required: true},
+//     diaryEntry: {type: String, required: true}, 
+//         // timestamps: true
+// });
 
-module.exports = mongoose.model('Diary', diarySchema);
+// module.exports = mongoose.model('Diary', diarySchema);
