@@ -8,6 +8,7 @@ function index(req, res) {
     })
 }
 
+
 function show(req, res) {
     Student.findById(req.params.id, function(err, student){
         Diary.find({ student: student._id }, function(err, diary) {
@@ -15,6 +16,7 @@ function show(req, res) {
         })
 })
 }
+
 
 function newStudent(req, res) {
     res.render('students/new', { name: "Student Name"});
@@ -32,12 +34,25 @@ function deleteOne(req, res){
         res.redirect('/students');
     })
 }
+// function edit(req, res){
+// res.render('students/edit', {
 
+// })
+// }
+
+function update(req, res){
+
+
+
+}
 
 module.exports = {
     index, 
     show, 
     new: newStudent,
     create,
-    delete: deleteOne
+    delete: deleteOne,
+    // edit,
+    update
+    
 }

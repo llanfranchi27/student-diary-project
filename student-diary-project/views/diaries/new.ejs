@@ -11,7 +11,7 @@
 <form 
 id="add-Diary-form"
   method="POST"
-  action="/students">
+  action="/students/<%= student._id %>/diaries">
   <label>Diary:</label>
   <textarea name="content"></textarea>
 <label>Date:</label>
@@ -31,5 +31,6 @@ id="add-Diary-form"
   </select>
   <input type="submit" value="Add Diary">
 </form>
+
 </body>
 </html>
