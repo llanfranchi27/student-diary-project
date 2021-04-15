@@ -1,29 +1,212 @@
-/* body {
-  margin-top: 20px;
+body {
+  background-image: url("https://images.pexels.com/photos/1568607/pexels-photo-1568607.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500");
+ background-size: cover; 
+ font-family: 'Lato', sans-serif;
+}
+
+
+.indexBod {
+ font-weight: 900; 
+ font-size: 30px;
+ color: black;
+ text-shadow: 1px 1px white;
+}
+.navbar{
+ background-image: url("https://images.pexels.com/photos/1568607/pexels-photo-1568607.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500");
+ /* border-bottom: 2px rgb(40, 143, 211); */
+ background-size: cover;
+}
+
+
+.index2 {
+ text-align: center;
+ padding: 30px
+}
+
+.main-title {
+
+ text-align: center;
+}
+
+.main-body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: auto;
 }
 
-a {
-  color: #00B7FF;
+.showBody {
+  text-align: center;
+  padding: 10px;
+  font-weight: 900; 
+ font-size: 15px;
+ color: black;
+ text-shadow: 1px 1px white;
 }
 
-#studentBox {
-  position: static;
+.wrapper{
+ position: absolute;
+ top:50%;
+ left:50%;
+ transform: translate(-50%, -50%);
+ width: fit-content;
+ height:auto;
+}
+button{
+ width:200px;
+ height:50px;
+ background: linear-gradient(to left top, #ffffff 50%, #afe6f7 50%);
+ border-style: none;
+ color: black;
+ font-size: 14px;
+ letter-spacing: 1px;
+ font-family: 'Lato';
+ font-weight: 600;
+ outline: none;
+ cursor: pointer;
+ position: 5px;
+ padding: 0px;
+ overflow: hidden;
+ transition: all .5s;
+ box-shadow: 0px 1px 2px rgba(0,0,0,.2);
 }
 
-.deleteButton {
-    display:list-item; 
-    margin-left: 375px;
+button:hover{
+ transition: all .5s;
+ transform: rotate(-3deg) scale(1.1);
+ box-shadow: 0px 3px 5px rgba(0,0,0,.4);
+ background: linear-gradient(to left top, #afe6f7 50%, #ffffff 50%);
 }
 
-.newStudentLink {
-   display:list-item;
-    margin-left: 375px;
+
+ul li {
+ list-style-type: none;
 }
 
-/* .studentDetails {
-  margin-top: 200px
-} */
+@import url(https://fonts.googleapis.com/css?family=Lato:900);
+*, *:before, *:after{
+ box-sizing:border-box;
+}
 
- 
+div.foo{
+ width: 90%;
+ margin: 0 auto;
+ text-align: center;
+}
+.letter{
+ display: inline-block;
+ font-weight: 900;
+ font-size: 4em;
+ margin: 0.2em;
+ position: relative;
+ color: #00B4F1;
+ transform-style: preserve-3d;
+ perspective: 400;
+ z-index: 1;
+}
+.letter:before, .letter:after{
+ position:absolute;
+ content: attr(data-letter);
+ transform-origin: top left;
+ top:0;
+ left:0;
+}
+.letter, .letter:before, .letter:after{
+ transition: all 0.3s ease-in-out;
+}
+.letter:before{
+ color: #fff;
+ text-shadow: 
+   -1px 0px 1px rgba(255,255,255,.8),
+   1px 0px 1px rgba(0,0,0,.8);
+ z-index: 3;
+ transform:
+   rotateX(0deg)
+   rotateY(-15deg)
+   rotateZ(0deg);
+}
+.letter:after{
+ color: rgba(0,0,0,.11);
+ z-index:2;
+ transform:
+   scale(1.08,1)
+   rotateX(0deg)
+   rotateY(0deg)
+   rotateZ(0deg)
+   skew(0deg,1deg);
+}
+.letter:hover:before{
+ color: #fafafa;
+ transform:
+   rotateX(0deg)
+   rotateY(-40deg)
+   rotateZ(0deg);
+}
+.letter:hover:after{
+ transform:
+   scale(1.08,1)
+   rotateX(0deg)
+   rotateY(40deg)
+   rotateZ(0deg)
+   skew(0deg,22deg);
+}
+
+@import url(https://fonts.googleapis.com/css?family=Lato:900);
+*, *:before, *:after{
+ box-sizing:border-box;
+}
+
+.letters{
+ display: inline-block;
+ font-weight: 1000;
+ font-size: 24px;
+ position: relative;
+ color: #00B4F1;
+ transform-style: preserve-3d;
+ perspective: 400;
+ z-index: 1;
+}
+.letters:before, .letters:after{
+ position:absolute;
+ content: attr(data-letter);
+ transform-origin: top left;
+ top:0;
+ left:0;
+}
+.letters, .letter:before, .letter:after{
+ transition: all 0.3s ease-in-out;
+}
+.letters:before{
+ color: #fff;
+ text-shadow: 
+   -1px 0px 1px rgba(255,255,255,.8),
+   1px 0px 1px rgba(0,0,0,.8);
+ z-index: 3;
+ transform:
+   rotateX(0deg)
+   rotateY(-15deg)
+   rotateZ(0deg);
+}
+.letters:after{
+ color: rgba(0,0,0,.11);
+ z-index:2;
+ transform:
+   scale(1.08,1)
+   rotateX(0deg)
+   rotateY(0deg)
+   rotateZ(0deg)
+   skew(0deg,1deg);
+}
+.letters:hover:before{
+ color: #fafafa;
+ transform:
+   rotateX(0deg)
+   rotateY(-40deg)
+   rotateZ(0deg);
+}
+.letters:hover:after{
+ transform:
+   scale(1.08,1)
+   rotateX(0deg)
+   rotateY(40deg)
+   rotateZ(0deg)
+   skew(0deg,22deg);
+}

@@ -1,34 +1,44 @@
 <%- include('../partials/header') -%>
 
-<!DOCTYPE html>
-<html>
-  <title>Pseudo Diaries</title>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="/stylesheets/style.css" />
-  <body>
-    <table id="list">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Location</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <% students.forEach(function(s) { %>
-          <tr class="studentDetails">
-            <td><%= s.name %></td>
-            <td><%= s.location %></td>
-            <td><a href="/students/<%= s._id %>">Student Details</a></td>
-            <td><form action="/students/<%= s._id %>?_method=DELETE"
-              class="delete-form" method="POST">
-              <button type="submit">Delete Student</button>
-            </form></td>
-          </tr>
+  <body class="index-body">
+  <div class="top">
+        <div class="foo">
+          <span class="letter" data-letter="P">P</span>
+          <span class="letter" data-letter="S">S</span>
+          <span class="letter" data-letter="E">E</span>
+          <span class="letter" data-letter="U">U</span>
+          <span class="letter" data-letter="D">D</span>
+          <span class="letter" data-letter="O">O</span>
+          <br>
+          <span class="letter" data-letter="D">D</span>
+          <span class="letter" data-letter="I">I</span>
+          <span class="letter" data-letter="A">A</span>
+          <span class="letter" data-letter="R">R</span>
+          <span class="letter" data-letter="I">I</span>
+          <span class="letter" data-letter="E">E</span>
+          <span class="letter" data-letter="S">S</span>
+        </div>
+      </div>
+       <% students.forEach(function(s) { %>
+      <div class="container indexBod">
+        <div class="row align-items-start">
+          <div class="col">
+            <p><span><%= s.name %></span></p>
+          </div>
+          <div class="col">
+            <p><span><%= s.location %></span></p>
+          </div>
+          <div class="col">
+            <p><a href="/students/<%= s._id %>"><button class="wrap">STUDENT DETAILS</button></a></p>
+              <p><form action="/students/<%= s._id %>?_method=DELETE"
+                class="delete-form" method="POST">
+                <button class="deleteButton" type="submit">Delete Student</button>
+              </form></p>
+          </div>
           <% }); %>
-        </tbody>
-      </table>
+        </div>
+      </div>
 
   </body>
 </html>
