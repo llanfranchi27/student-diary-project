@@ -10,7 +10,6 @@ module.exports = {
 function create(req, res) {
   Student.findById(req.params.id, function(err, student) {
     student.diaries.push(req.body);
-    console.log(student.diaries)
     student.save(function(err) {
       res.redirect(`/students/${student._id}`);
     });

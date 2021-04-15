@@ -30,16 +30,13 @@ function create(req, res){
 
 function deleteOne(req, res){
     Student.findByIdAndRemove(req.params.id, function(err, student) {
-        // console.log('Student deleted', student)
         res.redirect('/students');
     })
 }
 
 
 function update(req, res){
-    // console.log("re", req.body);
     Student.findByIdAndUpdate(req.params.id, req.body, function(err, student) {
-        // console.log("checklist", checklist); 
             res.redirect(`/students/${student.id}`)
     })
 }
