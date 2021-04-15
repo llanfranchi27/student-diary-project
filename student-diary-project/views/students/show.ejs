@@ -2,37 +2,53 @@
 
 <link rel=‘stylesheet’ href=‘/stylesheets/style.css’ />
 
-<div class="foo">
-  <span class="letter" data-letter="S">S</span>
-  <span class="letter" data-letter="T">T</span>
-  <span class="letter" data-letter="U">U</span>
-  <span class="letter" data-letter="D">D</span>
-  <span class="letter" data-letter="E">E</span>
-  <span class="letter" data-letter="N">N</span>
-  <span class="letter" data-letter="T">T</span>
-  <br>
-  <span class="letter" data-letter="D">D</span>
-  <span class="letter" data-letter="E">E</span>
-  <span class="letter" data-letter="T">T</span>
-  <span class="letter" data-letter="A">A</span>
-  <span class="letter" data-letter="I">I</span>
-  <span class="letter" data-letter="L">L</span>
-  <span class="letter" data-letter="S">S</span>
-</div>
+
 
   <body>
-    <section id="show-page">
-      <div>Name:</div>
-      <div><%= student.name %></div>
-      <div>Location:</div>
-      <div><%= student.location %></div>
-      <div>Previous Coding Experience:</div>
-      <div><%= student.preCodingExp ? 'Yes' : 'Nope' %></div>
-    </section>
 
-    <!-- <a href="/diaries/new">Add New Diary</a> -->
+    <div class="foo">
+      <span class="letter" data-letter="S">S</span>
+      <span class="letter" data-letter="T">T</span>
+      <span class="letter" data-letter="U">U</span>
+      <span class="letter" data-letter="D">D</span>
+      <span class="letter" data-letter="E">E</span>
+      <span class="letter" data-letter="N">N</span>
+      <span class="letter" data-letter="T">T</span>
+      <br>
+      <span class="letter" data-letter="D">D</span>
+      <span class="letter" data-letter="E">E</span>
+      <span class="letter" data-letter="T">T</span>
+      <span class="letter" data-letter="A">A</span>
+      <span class="letter" data-letter="I">I</span>
+      <span class="letter" data-letter="L">L</span>
+      <span class="letter" data-letter="S">S</span>
+    </div>
+<div class="showBody">
+    <div class="container">
+      <div class="row align-items-start">
+        <div class="col">
+          Name:
+          <%= student.name %>
+        </div>
+        </div>
+        <div class="row align-items-center">
+          <div class="col">
+          Location:
+          <%= student.location %>
+          </div>
+        </div>
+      <div class="row align-items-end">
+        <div class="col">
+          Previous Coding Experience:
+          <%= student.preCodingExp ? 'Yes' : 'Nope' %>
+        </div>
+      </div>
+      </div>
+      
+      <br>
 
-    <h2>Diaries</h2>
+<div class="newDiaryBody">
+    <h2>ADD NEW DIARY</h2>
     <form
       id="add-Diary-form"
       method="POST"
@@ -40,8 +56,10 @@
     >
       <label>Diary:</label>
       <textarea name="diaryEntry"></textarea>
+      <br>
       <label>Date:</label>
       <input type="date" name="date" />
+      <br>
       <label>Mood:</label>
       <select name="mood">
         <option value="Happy">Happy</option>
@@ -54,9 +72,16 @@
         <option value="Frustrated">Frustrated</option>
         <option value="Sad">Sad</option>
         <option value="Angry">Angry</option>
+        <option value="Tired">Tired</option>
       </select>
+      <br>
       <button type="submit" value="Add Diary">Add Diary</button>
     </form>
+    </div>
+
+
+<div class="diaryBody">
+    <h1>DIARIES</h1>
 
     <% if(student.diaries.length) { %>
       <table>
@@ -80,10 +105,12 @@
       <% } else { %> 
         <h5>No Diary Entries</h5>
       <% } %>
-    
+</div>
+
+
     <br />
 
-
+<div class="updateBody">
     <h1>Update Student</h1>
 
     <form id="new-form" action="/students/<%= student._id %>?_method=PUT" method="POST">
@@ -96,14 +123,10 @@
         <option value="yes">Yes</option>
         <option value="no">No</option></select
       ><br />
-      <input type="submit" value="Update Student" />
+      <button type="submit">UPDATE STUDENT</button>
     </form>
-
-   
-
-    <br />
-
-    <a href="/students">Back to All Students</a>
+  </div>
+  
   </body>
 </html>
 

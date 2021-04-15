@@ -29,17 +29,38 @@ body {
 }
 
 .main-body {
-  padding: 50px;
+  padding: 8px;
   margin: auto;
 }
 
 .showBody {
+  text-align: center;
+  padding: 8px;
+  font-weight: 900; 
+ font-size: 15px;
+ color: black;
+ text-shadow: 1px 1px white;
+}
+
+.newDiaryBody {
+  padding: 20px;
+}
+
+.newBody{
   text-align: center;
   padding: 10px;
   font-weight: 900; 
  font-size: 15px;
  color: black;
  text-shadow: 1px 1px white;
+}
+
+.diaryBody {
+  padding: 20px;
+}
+
+.updateBody {
+  padding: 20px;
 }
 
 .wrapper{
